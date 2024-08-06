@@ -1,0 +1,2436 @@
+{
+	"info": {
+		"_postman_id": "28da391e-431b-48d8-88f7-2abc1bb7c4a8",
+		"name": "SwiftStay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23292494",
+		"_collection_link": "https://rishab-khanna.postman.co/workspace/Rishab's-Collections~f68df8a4-f7d4-4ad5-8a28-fa8f16001e46/collection/23292494-28da391e-431b-48d8-88f7-2abc1bb7c4a8?action=share&source=collection_link&creator=23292494"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Onboarding",
+					"item": [
+						{
+							"name": "checkUser",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phoneNo\": \"9876020239\",\r\n    \"dialCode\": \"+91\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/user/checkUser",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"checkUser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createUser",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phoneNo\": \"9876020239\",\r\n    \"dialCode\": \"+91\",\r\n    \"name\": \"Rishab\",\r\n    \"otp\": 1234\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/v1/user/createUser",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"createUser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "resendOtp",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phoneNo\": \"9876020239\",\r\n    \"dialCode\": \"+91\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/user/resendOtp",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"resendOtp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "verifyOtp",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phoneNo\": \"9876020239\",\r\n    \"dialCode\": \"+91\",\r\n    \"otp\": 1234\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/user/verifyOtp",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"verifyOtp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://devapi.swiftstay.com/api/v1/user/logout",
+									"protocol": "https",
+									"host": [
+										"devapi",
+										"swiftstay",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getProfile",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/user/getProfile",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"getProfile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateProfile",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"image\": \"\",\r\n    \"name\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/user/updateProfile",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"updateProfile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateNumber",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phoneNo\": \"\",\r\n    \"dialCode\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/user/updateNumber",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"updateNumber"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Location",
+					"item": [
+						{
+							"name": "getLocation",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"page\":1,\r\n    \"limit\":10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/user/getLocation",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"getLocation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getLocationById",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/user/getLocation/6543ca18f32a564ee05097e7",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"getLocation",
+										"6543ca18f32a564ee05097e7"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Card",
+					"item": [
+						{
+							"name": "addCard",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\":\"tok_mastercard\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/user/addCard",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"addCard"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getCard",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/user/getCard",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"getCard"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteCard",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cardId\":\"card_1O9Ve1AIyEEaG0c2UU2ohCKj\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/user/deleteCard",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"deleteCard"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Booking",
+					"item": [
+						{
+							"name": "createBooking",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"locationId\": \"656120adf659c744d656b2a3\",\r\n    \"isRecurring\": false,\r\n    \"bookingType\": 1,\r\n    \"locationType\": 1,\r\n    \"checkInTime\": \"2024-04-02 16:30:56.000Z\",\r\n    \"checkOutTime\": \"2024-05-02 16:30:56.000Z\",\r\n    \"sourceId\": \"card_1OWDhOAIyEEaG0c22huCcQuD\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/user/createBooking",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"createBooking"
+									]
+								},
+								"description": "BOOKING_TYPE\n\n{   INSTANT: 1,  SCHEDULE: 2    }  \n\nLOCATION_SLOT:{        DAILY: 0,        MONTHLY: 1    }"
+							},
+							"response": []
+						},
+						{
+							"name": "getBooking",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/user/getBooking?page=1&limit=10&bookingStatus=2",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"getBooking"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "bookingStatus",
+											"value": "2"
+										}
+									]
+								},
+								"description": "BOOKING_STATUS: { UPCOMING/ACTIVE: 1, COMPLETED: 2 }"
+							},
+							"response": []
+						},
+						{
+							"name": "getBookingById",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/user/getBooking/6549225ae7882e903097d48e",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"getBooking",
+										"6549225ae7882e903097d48e"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateBooking",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"bookingId\":\"66141d6fec4083b18102595b\",\r\n    \"isRecurring\": true,\r\n    \"sourceId\": \"card_1OWDhOAIyEEaG0c22huCcQuD\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/user/updateBooking",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"updateBooking"
+									]
+								},
+								"description": "UPDATE_TYPE: { CHEKIN: 1, CHECKOUT: 2 }"
+							},
+							"response": []
+						},
+						{
+							"name": "extendBooking",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"bookingId\":\"6554f4d2afb0f55a271a2224\",\r\n    \"locationType\":1,\r\n    \"sourceId\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/user/extendBooking",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"extendBooking"
+									]
+								},
+								"description": "LOCATION_SLOT:{ DAILY: 0, MONTHLY: 1 }"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "cms",
+					"item": [
+						{
+							"name": "getFAQ",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/user/getFAQ",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"getFAQ"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getCms",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/user/getCms",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"getCms"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Transactions",
+					"item": [
+						{
+							"name": "getPaymentHistory",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/user/getPaymentHistory?page=1&limit=10",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"getPaymentHistory"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								},
+								"description": "  BOOKING_STATUS: {        UPCOMING: 1,        ACTIVE: 2,        COMPLETED: 3    }"
+							},
+							"response": []
+						},
+						{
+							"name": "getPaymentHistoryById",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/user/getPaymentHistory/6549225ae7882e903097d48e",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"getPaymentHistory",
+										"6549225ae7882e903097d48e"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTliYTIwNmZjZGVmM2UxOWM4NDYxNjEiLCJyb2xlIjoidXNlciIsImp0aSI6Imh2eXh0bWEwc3AwdW0zZHNjYTA1OGZiM3MiLCJpYXQiOjE3MTI1OTM5NTcsImV4cCI6MTcxNTE4NTk1N30.Je3s9xghgkiIkcKzQm8optllh7vUMz8hsMc8oBovPfU",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Upload",
+			"item": [
+				{
+					"name": "uploadFile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/risha/Downloads/trishul-lens-flares-z47yjx3c17yuhobn.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev}}/api/v1/Upload/uploadFile",
+							"host": [
+								"{{dev}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Upload",
+								"uploadFile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "uploadFiles",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": [
+										"/C:/Users/risha/Downloads/b04c86202dcdc103f49bd99f9b3d948e.jpeg",
+										"/C:/Users/risha/Downloads/wallpapersden.com_colorful-skull-art_240x320.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev}}/api/v1/Upload/uploadFiles",
+							"host": [
+								"{{dev}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Upload",
+								"uploadFiles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Onboarding",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"swiftstayadmin@yopmail.com\",\r\n    \"password\":\"Test@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/login",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/logout",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getProfile",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/getProfile",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"getProfile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateProfile",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"\",\r\n    \"phoneNo\": \"\",\r\n    \"dialCode\": \"\",\r\n    \"address\":\"\",\r\n    \"name\":\"\",\r\n    \"image\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/updateProfile",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"updateProfile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "changePassword",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"oldPassword\":\"\",\r\n    \"newPassword\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/changePassword",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"changePassword"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "resetPassword",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"\",\r\n    \"newPassword\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/resetPassword",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"resetPassword"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "forgotPassword",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/admin/forgotPassword",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"forgotPassword"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Location",
+					"item": [
+						{
+							"name": "addLocation",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Mohali\",\r\n    \"address\": \"Punjab\",\r\n    \"mapLink\": \"\",\r\n    \"image\": \"\",\r\n    \"totalSlots\": 100,\r\n    \"creditCardFee\": 10,\r\n    \"salesTax\": 20,\r\n    \"convenienceFee\": 20,\r\n    \"dailySlot\": {\r\n        \"price\": 1,\r\n        \"extendPrice\": 2\r\n    },\r\n    \"monthlySlot\": {\r\n        \"price\": 1,\r\n        \"extendPrice\": 2\r\n    },\r\n    \"clientId\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/addLocation",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"addLocation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getLocation",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/getLocation?page=1&limit=10",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"getLocation"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getLocationById",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/getLocation/6543ca18f32a564ee05097e7",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"getLocation",
+										"6543ca18f32a564ee05097e7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateLocation",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Mohali\",\r\n    \"address\": \"Punjab\",\r\n    \"mapLink\": \"https://www.google.com/maps/@30.6983913,76.6561809,13z?entry=ttu\",\r\n    \"image\": \"https://swiftstay.s3.us-east-2.amazonaws.com/1699289224816WhatsApp+Image+2023-10-19+at+17.54.10_e457f22e.jpg\",\r\n    \"totalSlots\": 90,\r\n    \"creditCardFee\": 10,\r\n    \"salesTax\": 20,\r\n    \"convenienceFee\": 20,\r\n    \"dailySlot\": {\r\n        \"price\": 1,\r\n        \"extendPrice\": 2\r\n    },\r\n    \"monthlySlot\": {\r\n        \"price\": 1,\r\n        \"extendPrice\": 2\r\n    },\r\n    \"clientId\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/updateLocation/6548e2bd2bd1ad61fbcc0abd",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"updateLocation",
+										"6548e2bd2bd1ad61fbcc0abd"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteLocation",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/deleteLocation/6543ca18f32a564ee05097e7",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"deleteLocation",
+										"6543ca18f32a564ee05097e7"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cms",
+					"item": [
+						{
+							"name": "getCms",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/getCms",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"getCms"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addCms",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"privacyPolicy\": \"privacyPolicy\",\r\n    \"termsAndConditions\": \"termsAndConditions\",\r\n    \"aboutUs\": \"aboutUs\",\r\n    \"faq\": \"faq\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/addCms",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"addCms"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "addUser",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"sdfasfa\",\r\n    \"phoneNo\":\"7995341233\",\r\n    \"dialCode\":\"+91\",\r\n    \"image\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/addUser",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"addUser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getUser",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/getUser?page=1&limit=10",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"getUser"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getUserById",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/getUser/42355346456346346347436",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"getUser",
+										"42355346456346346347436"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateUser",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"sdfasfa\",\r\n    \"phoneNo\":\"7995341233\",\r\n    \"dialCode\":\"+91\",\r\n    \"image\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/updateUser/46398564306543056340",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"updateUser",
+										"46398564306543056340"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteUser",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/deleteUser/63f71512e11b6a11187d3a76",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"deleteUser",
+										"63f71512e11b6a11187d3a76"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Faq",
+					"item": [
+						{
+							"name": "addFAQ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"question\":\"question\",\r\n    \"answer\":\"answer answer\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/addFAQ",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"addFAQ"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getFAQ",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/getFAQ",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"getFAQ"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "editFAQ",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"question\":\"question\",\r\n    \"answer\":\"answer answer 2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/editFAQ/6556473884d81677a7efa911",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"editFAQ",
+										"6556473884d81677a7efa911"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteFAQ",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/deleteFAQ/63f71512e11b6a11187d3a76",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"deleteFAQ",
+										"63f71512e11b6a11187d3a76"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Owner",
+					"item": [
+						{
+							"name": "inviteOwner",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"sdfasfa\",\r\n    \"email\":\"abc@yopmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/inviteOwner",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"inviteOwner"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getOwners",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/getOwners?page&limit&search",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"getOwners"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": null
+										},
+										{
+											"key": "limit",
+											"value": null
+										},
+										{
+											"key": "search",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getOwnerById",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/getOwners/654d2e1f75361dcfeccd1c0c",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"getOwners",
+										"654d2e1f75361dcfeccd1c0c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllOwners",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/getAllOwners",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"getAllOwners"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateOwner",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"\",\r\n    \"phoneNo\":\"\",\r\n    \"dialCode\":\"\",\r\n    \"image\": \"\",\r\n    \"email\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/updateOwner/654d2e1f75361dcfeccd1c0c",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"updateOwner",
+										"654d2e1f75361dcfeccd1c0c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteOwner",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/deleteOwner/654d2e1f75361dcfeccd1c0c",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"deleteOwner",
+										"654d2e1f75361dcfeccd1c0c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "changeOwnerPassword",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"\",\r\n    \"password\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/changeOwnerPassword",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"changeOwnerPassword"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Booking",
+					"item": [
+						{
+							"name": "getBooking",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/getBooking?page=1&limit=10&bookingStatus=1",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"getBooking"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "bookingStatus",
+											"value": "1"
+										}
+									]
+								},
+								"description": "  BOOKING_STATUS: {        UPCOMING: 1,        ACTIVE: 2,        COMPLETED: 3    }"
+							},
+							"response": []
+						},
+						{
+							"name": "getBookingById",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/getBooking/6549225ae7882e903097d48e",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"getBooking",
+										"6549225ae7882e903097d48e"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getReports",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"startDate\": \"2023-11-14 00:00:00\",\r\n    \"endDate\": \"2023-11-30 00:00:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://devapi.swiftstay.com/api/v1/admin/getReports",
+									"protocol": "https",
+									"host": [
+										"devapi",
+										"swiftstay",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"getReports"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Transactions",
+					"item": [
+						{
+							"name": "getTransactions",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/getTransactions?page=1&limit=10&userId=",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"getTransactions"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "userId",
+											"value": ""
+										}
+									]
+								},
+								"description": "  BOOKING_STATUS: {        UPCOMING: 1,        ACTIVE: 2,        COMPLETED: 3    }"
+							},
+							"response": []
+						},
+						{
+							"name": "getTransactionsById",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/getTransactions/6549225ae7882e903097d48e",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"getTransactions",
+										"6549225ae7882e903097d48e"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "exportTransactions",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/exportTransactions?startDate&endDate",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"exportTransactions"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": null
+										},
+										{
+											"key": "endDate",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "dashboard",
+					"item": [
+						{
+							"name": "dashboard",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/dashboard?type=Daily",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"dashboard"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "Daily"
+										}
+									]
+								},
+								"description": "7Days, 12Months, 30Days, 24Hours, 3Months"
+							},
+							"response": []
+						},
+						{
+							"name": "exportDashboard",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTRiYmM1YzM5ZTMxZWI3ZTU0MWY3YTciLCJqdGkiOiJrdWFmeHpleGdpNG92MW9sMjdza2c0MGFzIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzIwMTc1ODUzLCJleHAiOjE3MjI3Njc4NTN9.czEXXEQ5GgbML4xI4VrQfLB71C6-AKL5lWs3H2vNbjs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/v1/admin/exportDashboard?type=Daily",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"exportDashboard"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "Daily"
+										}
+									]
+								},
+								"description": "7Days, 12Months, 30Days, 24Hours, 3Months"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Company",
+					"item": [
+						{
+							"name": "Create Company",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n\"email\": \"dk8430996231+1g@gmai.com\",\n\"name\" :  \"dhamendra \",\n\"dialCode\":\"+91\",\n\"phoneNo\": \"0755116231\",\n\"address\":\"adfs\"\n\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/addComapny",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"addComapny"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Comapny",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/getCompany/6576e1200d3e5d15422a449b",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"getCompany",
+										"6576e1200d3e5d15422a449b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Comapny",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\"email\": \"dk8430996231+875511@gmai.com\",\n\"name\" :  \"dhamendra \",\n\"dialCode\":\"+91\",\n\"phoneNo\": \"0755116231\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/updateComapny/65786f25d794c6145627ba30",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"updateComapny",
+										"65786f25d794c6145627ba30"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Company",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/deleteComapny/6576d1519262ee0b966f1081",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"deleteComapny",
+										"6576d1519262ee0b966f1081"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Assign Driver",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\"companyId\" : \"6576e1200d3e5d15422a449b\",\n\"userId\" : \"6578670e4953c6caea69fd57\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/assignDriver",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"assignDriver"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "check User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"phoneNo\": \"8755116231\",\n    \"dialCode\": \"+91\",\n    \"companyId\":\"6576e1200d3e5d15422a449b\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/checkUser",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"checkUser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"phoneNo\": \"9876020235\",\n    \"dialCode\": \"+91\",\n    \"name\": \"Rishab\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/v1/admin/createUser",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"createUser"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTRiYmM1YzM5ZTMxZWI3ZTU0MWY3YTciLCJqdGkiOiI5eGFiY2h1aXN3ZHY3Mzh4emI2eWhndnA4Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzIwNjY5MTg0LCJleHAiOjE3MjMyNjExODR9.SzeLJSNY0qoI9jzvNePMvwm7k3iTA9krlYelr5EXav8",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "dev",
+			"value": "https://devapi.swiftstay.com",
+			"type": "string"
+		},
+		{
+			"key": "local",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}

@@ -1,0 +1,1199 @@
+openapi: 3.0.0
+info:
+  title: SwiftStay
+  version: 1.0.0
+servers:
+  - url: http://{{dev}}
+  - url: http://{{local}}
+  - url: https://devapi.swiftstay.com
+  - url: http://localhost:3000
+components:
+  securitySchemes:
+    noauthAuth:
+      type: http
+      scheme: noauth
+    bearerAuth:
+      type: http
+      scheme: bearer
+tags:
+  - name: User
+  - name: User > Onboarding
+  - name: User > Location
+  - name: User > Card
+  - name: User > Booking
+  - name: User > cms
+  - name: User > Transactions
+  - name: Upload
+  - name: Admin
+  - name: Admin > Onboarding
+  - name: Admin > Location
+  - name: Admin > Cms
+  - name: Admin > User
+  - name: Admin > Faq
+  - name: Admin > Owner
+  - name: Admin > Booking
+  - name: Admin > Transactions
+  - name: Admin > dashboard
+  - name: Admin > Company
+paths:
+  /api/v1/user/checkUser:
+    post:
+      tags:
+        - User > Onboarding
+      summary: checkUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                phoneNo: '9876020239'
+                dialCode: '+91'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/user/createUser:
+    post:
+      tags:
+        - User > Onboarding
+      summary: createUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                phoneNo: '9876020239'
+                dialCode: '+91'
+                name: Rishab
+                otp: 1234
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/user/resendOtp:
+    post:
+      tags:
+        - User > Onboarding
+      summary: resendOtp
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                phoneNo: '9876020239'
+                dialCode: '+91'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/user/verifyOtp:
+    post:
+      tags:
+        - User > Onboarding
+      summary: verifyOtp
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                phoneNo: '9876020239'
+                dialCode: '+91'
+                otp: 1234
+      security:
+        - noauthAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/user/logout:
+    get:
+      tags:
+        - User > Onboarding
+      summary: logout
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/user/getProfile:
+    get:
+      tags:
+        - User > Onboarding
+      summary: getProfile
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/user/updateProfile:
+    put:
+      tags:
+        - User > Onboarding
+      summary: updateProfile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                image: ''
+                name: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/user/updateNumber:
+    put:
+      tags:
+        - User > Onboarding
+      summary: updateNumber
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                phoneNo: ''
+                dialCode: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/user/getLocation:
+    post:
+      tags:
+        - User > Location
+      summary: getLocation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                page: 1
+                limit: 10
+      security:
+        - noauthAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/user/getLocation/6543ca18f32a564ee05097e7:
+    post:
+      tags:
+        - User > Location
+      summary: getLocationById
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: ''
+      security:
+        - noauthAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/user/addCard:
+    post:
+      tags:
+        - User > Card
+      summary: addCard
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                token: tok_mastercard
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/user/getCard:
+    get:
+      tags:
+        - User > Card
+      summary: getCard
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/user/deleteCard:
+    delete:
+      tags:
+        - User > Card
+      summary: deleteCard
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/user/createBooking:
+    post:
+      tags:
+        - User > Booking
+      summary: createBooking
+      description: "BOOKING_TYPE\n\n{ \_ INSTANT: 1,\_ SCHEDULE: 2\_ \_ }  \n\nLOCATION_SLOT:{\_ \_ \_ \_ DAILY: 0,\_ \_ \_ \_ MONTHLY: 1\_ \_ }"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                locationId: 656120adf659c744d656b2a3
+                isRecurring: false
+                bookingType: 1
+                locationType: 1
+                checkInTime: '2024-04-02 16:30:56.000Z'
+                checkOutTime: '2024-05-02 16:30:56.000Z'
+                sourceId: card_1OWDhOAIyEEaG0c22huCcQuD
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/user/getBooking:
+    get:
+      tags:
+        - User > Booking
+      summary: getBooking
+      description: 'BOOKING_STATUS: { UPCOMING/ACTIVE: 1, COMPLETED: 2 }'
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+        - name: bookingStatus
+          in: query
+          schema:
+            type: integer
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/user/getBooking/6549225ae7882e903097d48e:
+    get:
+      tags:
+        - User > Booking
+      summary: getBookingById
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/user/updateBooking:
+    put:
+      tags:
+        - User > Booking
+      summary: updateBooking
+      description: 'UPDATE_TYPE: { CHEKIN: 1, CHECKOUT: 2 }'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                bookingId: 66141d6fec4083b18102595b
+                isRecurring: true
+                sourceId: card_1OWDhOAIyEEaG0c22huCcQuD
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/user/extendBooking:
+    post:
+      tags:
+        - User > Booking
+      summary: extendBooking
+      description: 'LOCATION_SLOT:{ DAILY: 0, MONTHLY: 1 }'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                bookingId: 6554f4d2afb0f55a271a2224
+                locationType: 1
+                sourceId: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/user/getFAQ:
+    get:
+      tags:
+        - User > cms
+      summary: getFAQ
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/user/getCms:
+    get:
+      tags:
+        - User > cms
+      summary: getCms
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/user/getPaymentHistory:
+    get:
+      tags:
+        - User > Transactions
+      summary: getPaymentHistory
+      description: "\_ BOOKING_STATUS: {\_ \_ \_ \_ UPCOMING: 1,\_ \_ \_ \_ ACTIVE: 2,\_ \_ \_ \_ COMPLETED: 3\_ \_ }"
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/user/getPaymentHistory/6549225ae7882e903097d48e:
+    get:
+      tags:
+        - User > Transactions
+      summary: getPaymentHistoryById
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/Upload/uploadFile:
+    post:
+      tags:
+        - Upload
+      summary: uploadFile
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/Upload/uploadFiles:
+    post:
+      tags:
+        - Upload
+      summary: uploadFiles
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                files:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/login:
+    post:
+      tags:
+        - Admin > Onboarding
+      summary: Login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: swiftstayadmin@yopmail.com
+                password: Test@123
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/logout:
+    get:
+      tags:
+        - Admin > Onboarding
+      summary: logout
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/getProfile:
+    get:
+      tags:
+        - Admin > Onboarding
+      summary: getProfile
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/updateProfile:
+    put:
+      tags:
+        - Admin > Onboarding
+      summary: updateProfile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: ''
+                phoneNo: ''
+                dialCode: ''
+                address: ''
+                name: ''
+                image: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/changePassword:
+    post:
+      tags:
+        - Admin > Onboarding
+      summary: changePassword
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                oldPassword: ''
+                newPassword: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/resetPassword:
+    post:
+      tags:
+        - Admin > Onboarding
+      summary: resetPassword
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                id: ''
+                newPassword: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/forgotPassword:
+    post:
+      tags:
+        - Admin > Onboarding
+      summary: forgotPassword
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/addLocation:
+    post:
+      tags:
+        - Admin > Location
+      summary: addLocation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Mohali
+                address: Punjab
+                mapLink: ''
+                image: ''
+                totalSlots: 100
+                creditCardFee: 10
+                salesTax: 20
+                convenienceFee: 20
+                dailySlot:
+                  price: 1
+                  extendPrice: 2
+                monthlySlot:
+                  price: 1
+                  extendPrice: 2
+                clientId: null
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/getLocation:
+    get:
+      tags:
+        - Admin > Location
+      summary: getLocation
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/getLocation/6543ca18f32a564ee05097e7:
+    get:
+      tags:
+        - Admin > Location
+      summary: getLocationById
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/updateLocation/6548e2bd2bd1ad61fbcc0abd:
+    put:
+      tags:
+        - Admin > Location
+      summary: updateLocation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Mohali
+                address: Punjab
+                mapLink: >-
+                  https://www.google.com/maps/@30.6983913,76.6561809,13z?entry=ttu
+                image: >-
+                  https://swiftstay.s3.us-east-2.amazonaws.com/1699289224816WhatsApp+Image+2023-10-19+at+17.54.10_e457f22e.jpg
+                totalSlots: 90
+                creditCardFee: 10
+                salesTax: 20
+                convenienceFee: 20
+                dailySlot:
+                  price: 1
+                  extendPrice: 2
+                monthlySlot:
+                  price: 1
+                  extendPrice: 2
+                clientId: null
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/deleteLocation/6543ca18f32a564ee05097e7:
+    delete:
+      tags:
+        - Admin > Location
+      summary: deleteLocation
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/getCms:
+    get:
+      tags:
+        - Admin > Cms
+      summary: getCms
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/addCms:
+    post:
+      tags:
+        - Admin > Cms
+      summary: addCms
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                privacyPolicy: privacyPolicy
+                termsAndConditions: termsAndConditions
+                aboutUs: aboutUs
+                faq: faq
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/addUser:
+    post:
+      tags:
+        - Admin > User
+      summary: addUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: sdfasfa
+                phoneNo: '7995341233'
+                dialCode: '+91'
+                image: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/getUser:
+    get:
+      tags:
+        - Admin > User
+      summary: getUser
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/getUser/42355346456346346347436:
+    get:
+      tags:
+        - Admin > User
+      summary: getUserById
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/updateUser/46398564306543056340:
+    put:
+      tags:
+        - Admin > User
+      summary: updateUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: sdfasfa
+                phoneNo: '7995341233'
+                dialCode: '+91'
+                image: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/deleteUser/63f71512e11b6a11187d3a76:
+    delete:
+      tags:
+        - Admin > User
+      summary: deleteUser
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/addFAQ:
+    post:
+      tags:
+        - Admin > Faq
+      summary: addFAQ
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                question: question
+                answer: answer answer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/getFAQ:
+    get:
+      tags:
+        - Admin > Faq
+      summary: getFAQ
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/editFAQ/6556473884d81677a7efa911:
+    put:
+      tags:
+        - Admin > Faq
+      summary: editFAQ
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                question: question
+                answer: answer answer 2
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/deleteFAQ/63f71512e11b6a11187d3a76:
+    delete:
+      tags:
+        - Admin > Faq
+      summary: deleteFAQ
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/inviteOwner:
+    post:
+      tags:
+        - Admin > Owner
+      summary: inviteOwner
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: sdfasfa
+                email: abc@yopmail.com
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/getOwners:
+    get:
+      tags:
+        - Admin > Owner
+      summary: getOwners
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/getOwners/654d2e1f75361dcfeccd1c0c:
+    get:
+      tags:
+        - Admin > Owner
+      summary: getOwnerById
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/getAllOwners:
+    get:
+      tags:
+        - Admin > Owner
+      summary: getAllOwners
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/updateOwner/654d2e1f75361dcfeccd1c0c:
+    put:
+      tags:
+        - Admin > Owner
+      summary: updateOwner
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: ''
+                phoneNo: ''
+                dialCode: ''
+                image: ''
+                email: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/deleteOwner/654d2e1f75361dcfeccd1c0c:
+    delete:
+      tags:
+        - Admin > Owner
+      summary: deleteOwner
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/changeOwnerPassword:
+    post:
+      tags:
+        - Admin > Owner
+      summary: changeOwnerPassword
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                id: ''
+                password: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/getBooking:
+    get:
+      tags:
+        - Admin > Booking
+      summary: getBooking
+      description: "\_ BOOKING_STATUS: {\_ \_ \_ \_ UPCOMING: 1,\_ \_ \_ \_ ACTIVE: 2,\_ \_ \_ \_ COMPLETED: 3\_ \_ }"
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+        - name: bookingStatus
+          in: query
+          schema:
+            type: integer
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/getBooking/6549225ae7882e903097d48e:
+    get:
+      tags:
+        - Admin > Booking
+      summary: getBookingById
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/getReports:
+    post:
+      tags:
+        - Admin > Booking
+      summary: getReports
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                startDate: '2023-11-14 00:00:00'
+                endDate: '2023-11-30 00:00:00'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/getTransactions:
+    get:
+      tags:
+        - Admin > Transactions
+      summary: getTransactions
+      description: "\_ BOOKING_STATUS: {\_ \_ \_ \_ UPCOMING: 1,\_ \_ \_ \_ ACTIVE: 2,\_ \_ \_ \_ COMPLETED: 3\_ \_ }"
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+        - name: userId
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/getTransactions/6549225ae7882e903097d48e:
+    get:
+      tags:
+        - Admin > Transactions
+      summary: getTransactionsById
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/exportTransactions:
+    get:
+      tags:
+        - Admin > Transactions
+      summary: exportTransactions
+      parameters:
+        - name: startDate
+          in: query
+          schema:
+            type: string
+        - name: endDate
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/dashboard:
+    get:
+      tags:
+        - Admin > dashboard
+      summary: dashboard
+      description: 7Days, 12Months, 30Days, 24Hours, 3Months
+      parameters:
+        - name: type
+          in: query
+          schema:
+            type: string
+          example: Daily
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/exportDashboard:
+    get:
+      tags:
+        - Admin > dashboard
+      summary: exportDashboard
+      description: 7Days, 12Months, 30Days, 24Hours, 3Months
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: type
+          in: query
+          schema:
+            type: string
+          example: Daily
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/addComapny:
+    post:
+      tags:
+        - Admin > Company
+      summary: Create Company
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: dk8430996231+1g@gmai.com
+                name: 'dhamendra '
+                dialCode: '+91'
+                phoneNo: '0755116231'
+                address: adfs
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/getCompany/6576e1200d3e5d15422a449b:
+    get:
+      tags:
+        - Admin > Company
+      summary: Get Comapny
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/updateComapny/65786f25d794c6145627ba30:
+    put:
+      tags:
+        - Admin > Company
+      summary: Update Comapny
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: dk8430996231+875511@gmai.com
+                name: 'dhamendra '
+                dialCode: '+91'
+                phoneNo: '0755116231'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/deleteComapny/6576d1519262ee0b966f1081:
+    delete:
+      tags:
+        - Admin > Company
+      summary: Delete Company
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/assignDriver:
+    post:
+      tags:
+        - Admin > Company
+      summary: Assign Driver
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                companyId: 6576e1200d3e5d15422a449b
+                userId: 6578670e4953c6caea69fd57
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/checkUser:
+    post:
+      tags:
+        - Admin > Company
+      summary: check User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                phoneNo: '8755116231'
+                dialCode: '+91'
+                companyId: 6576e1200d3e5d15422a449b
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/admin/createUser:
+    post:
+      tags:
+        - Admin > Company
+      summary: create User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                phoneNo: '9876020235'
+                dialCode: '+91'
+                name: Rishab
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
